@@ -1,0 +1,14 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <meta http-equiv="Content-Security-Policy" content="script-src http://sub1.mylab.com/clickjackcsp/script.js">
+  <!--meta http-equiv="Content-Security-Policy" content="style-src 'self'"-->
+</head>
+<body>
+  <div><button type="button" style='position:absolute; top:30px; left:30px;' onclick"=good">Hit Me!</button></div>
+  <!--div style='color:red; background-color:green; position:absolute; top:500; left:500;'>test</div-->
+  <script src="http://sub1.mylab.com/clickjackcsp/script.js"></script>
+  <br><br><br>
+  <p>In this test, when there's no CSP rule for CSS, then inline CSS is allowed and it can be used to perform clickjacking.</p>
+</body>
+</html>

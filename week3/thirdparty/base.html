@@ -1,0 +1,15 @@
+<!DOCTYPE>
+<html>
+<head></head>
+<body>
+<h1>In this test, we will test whether a third-party cookie is blocked.</h1>
+<iframe id="if1" src="http://sub2.mylab.com/setthirdpartycookie/setcookie.html"></iframe>
+<script>
+  var if1 = document.getElementById("if1");
+  if1.onload=function() {
+    alert("heck response header");
+    document.location="http://sub2.mylab.com/thirdpartycookie/getcookie.html";
+  }
+</script>
+</body>
+</html>

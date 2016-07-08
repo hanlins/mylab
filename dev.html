@@ -6,10 +6,10 @@
 <body>
   <h1>This is the dev page.</h1>
   <div class="login">
-    <form>
-      <input type="text"></input>
-      <input type="password"></input>
-      <input type="submit" value="login" onclick=javascript:alert('ha')></input>
+    <form action="session" method="post">
+      Username <input type="text" name="uname"></input><br>
+      Password <input type="password" name="passwd"></input><br>
+      <input type="submit" value="login"></input>
     </form>
   </div>
 </body>

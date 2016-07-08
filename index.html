@@ -1,4 +1,4 @@
-<!-- DOCTYPE HTML -->
+<!DOCTYPE HTML>
 <html>
 <head>
   <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
@@ -16,6 +16,35 @@
     <input type="submit" onclick=javascript:alert('good')></input>
   </form>
   <p>This is the index page.</p>
-  <a href="http://mylab.com/dev">dev site</a>
+  <a href="http://mylab.com/dev">dev site</a><br>
+  <a href="http://mylab.com/evil">interplay site (cookie + dom access)</a><br>
+  <a href="http://mylab.com/multi_csp/multi_csp.html">multi-stage CSP script loading</a> doesn't work <br>
+  <a href="http://mylab.com/multi_csp/multi_csp_style.html">multi-stage CSP style sheet loading</a> doesn't work <br>
+  <a href="http://mylab.com/multi_csp/multi_csp2.html">multi-stage CSP (iframe + dom access)</a><br>
+  <a href="http://sub1.mylab.com/postmsg/postmsg.html">postMessage domain check bypass</a><br>
+  <a href="http://sub1.mylab.com/share/victim.html">Passing critical information via shared resource (window.name)</a><br>
+  <a href="http://sub1.mylab.com/titletest/first.html">Third-party get first-party title</a><br>
+  <a href="http://mylab.com/clickjackcsp/base.html">Clickjacking + CSP (XSS - CSS)</a><br>
+  <a href="http://mylab.com/thirdpartycookie/base.html">Test blocking for third party cookie(response header)</a><br>
+  <a href="http://mylab.com/thirdpartycookie/base2.html">Test blocking for third party cookie(js set cookie)</a><br>
+  <a href="http://mylab.com/trackera/base.html">Tracker type A</a><br>
+  <a href="http://mylab.com/trackerb/base.html">Tracker type B</a><br>
+  <!--a href="http://www.baidu.com"><div>hi</div></a><br-->
+  
+  <div id="sandbox">iframe</div>
+  <script type="text/javascript">
+    /*
+    var sb = document.getElementById("sandbox");
+    var if1 = document.createElement("iframe");
+    //if1.src = "http://test.mylab.com";
+    if1.src = "http://www.baidu.com";
+    if1.height = 800;
+    if1.width = 800;
+    if1.id = 'if1';
+    sb.appendChild(if1);
+    alert(if1.document.domain);
+    */
+  </script>
 </body>
 </html>
+

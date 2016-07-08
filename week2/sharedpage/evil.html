@@ -1,0 +1,14 @@
+<!-- DOCTYPE HTML -->
+<html>
+<head>
+</head>
+<body>
+  <h1> Use shared resourde to bypass CSP. </h1>
+  <p>I'm evil!</p><br>
+  <!--script src='http://sub1.mylab.com/multi_csp_js/script1.js'></script-->
+  <script>
+    console.log(window.location+': do potentially harmful things based on the value passed');
+    alert(window.name);
+  </script>
+</body>
+</html>

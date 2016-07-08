@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <!--meta http-equiv="Content-Security-Policy" content="script-src http://sub1.mylab.com/*"-->
+
+  <!--meta http-equiv="Content-Security-Policy" content="script-src http://sub1.mylab.com/multi_csp_js/script1.js"-->
+  <!--meta http-equiv="Content-Security-Policy" content="script-src https://code.jquery.com/jquery-1.12.4.min.js"-->
+  <meta http-equiv="Content-Security-Policy" content="script-src http://sub1.mylab.com/multi_csp_js/script1.js https://code.jquery.com/jquery-1.12.4.min.js">
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1> Multi-stage CSP request 1. </h1>
+  <p> In this demo, CSP will be defined and user can load a js script from sub1.mylab.com, where in that legal script, it will try to load another script from sub2.mylab.com, which is not listed in the CSP. Let's see what will happen. </p><br>
+  <p>If successfully laod a second-stage evil script, then alert to prompt. </p>
+  <script src='http://sub1.mylab.com/multi_csp_js/script1.js'></script>
+</body>
+</html>

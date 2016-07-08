@@ -1,0 +1,23 @@
+<!-- DOCTYPE HTML -->
+<html>
+<head>
+  <!--meta http-equiv="Content-Security-Policy" content="script-src http://sub1.mylab.com/*"-->
+
+  <!--meta http-equiv="Content-Security-Policy" content="script-src http://sub1.mylab.com/multi_csp_js/script1.js"-->
+  <!--meta http-equiv="Content-Security-Policy" content="script-src https://code.jquery.com/jquery-1.12.4.min.js"-->
+
+  <meta http-equiv="Content-Security-Policy" content="script-src http://sub1.mylab.com/multi_csp_js/script2.js https://code.jquery.com/jquery-1.12.4.min.js" >
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+</head>
+<body>
+  <h1> Multi-stage CSP request 2. </h1>
+  <p>In this test, we will try to insert an iframe in the webpage. The iframe is trusted by the base page but has a evil nature. It will:
+    <li>fetch an evil script that is not trusted by base page's CSP.</li>
+    <li>relax its domain such that it has the same domain as the base page.</li>
+    <li>modify the base page using that evil script</li>
+  </p><br>
+  <div id='slot1'></div>
+  <div id='slot2'></div>
+  <script src='http://sub1.mylab.com/multi_csp_js/script2.js'></script>
+</body>
+</html>
