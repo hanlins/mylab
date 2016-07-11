@@ -48,6 +48,12 @@ func main() {
 	// tracker B
 	r.HandleFunc("/trackerb/{file}", TrackerBHandler)
 
+	// tracker C
+	r.HandleFunc("/trackerc/{file}", TrackerCHandler)
+
+	// tracker E
+	r.HandleFunc("/trackere/{file}", TrackerEHandler)
+
 	// Start listening on the given IP address and port
 	http.Handle("/", r)
 	var httpListenAddr = fmt.Sprintf("%s:%d",
@@ -146,4 +152,12 @@ func TrackerAHandler(w http.ResponseWriter, r *http.Request) {
 
 func TrackerBHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "./week4/trackerb/"+mux.Vars(r)["file"])
+}
+
+func TrackerCHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "./week4/trackerc/"+mux.Vars(r)["file"])
+}
+
+func TrackerEHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "./week4/trackere/"+mux.Vars(r)["file"])
 }
