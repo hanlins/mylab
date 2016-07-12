@@ -51,8 +51,14 @@ func main() {
 	// tracker C
 	r.HandleFunc("/trackerc/{file}", TrackerCHandler)
 
+	// tracker D
+	r.HandleFunc("/trackerd/{file}", TrackerDHandler)
+
 	// tracker E
 	r.HandleFunc("/trackere/{file}", TrackerEHandler)
+
+	// popup detect
+	r.HandleFunc("/popup/{file}", PopupDetectHandler)
 
 	// Start listening on the given IP address and port
 	http.Handle("/", r)
@@ -158,6 +164,14 @@ func TrackerCHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "./week4/trackerc/"+mux.Vars(r)["file"])
 }
 
+func TrackerDHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "./week4/trackerd/"+mux.Vars(r)["file"])
+}
+
 func TrackerEHandler(w http.ResponseWriter, r *http.Request) {
 	http.ServeFile(w, r, "./week4/trackere/"+mux.Vars(r)["file"])
+}
+
+func PopupDetectHandler(w http.ResponseWriter, r *http.Request) {
+	http.ServeFile(w, r, "./week4/popup/"+mux.Vars(r)["file"])
 }

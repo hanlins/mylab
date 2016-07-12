@@ -1,0 +1,17 @@
+<!DOCTYPE HTML>
+<html>
+<head><head>
+<body>
+  <div>
+    <h3>Test whether popup has been disabled.</h3>
+  </div>
+  <script>
+    var newWin = window.open("http://www.baidu.com");
+    if(!newWin || newWin.closed || typeof newWin.closed=='undefined') { 
+      document.write("popup disabled");
+    } else {
+      document.write("popup not disabled");
+    }
+  </script>
+</body>
+</html>
