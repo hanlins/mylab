@@ -1,0 +1,20 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+<head>
+<body>
+  <div>
+    <h3>Try to bypass popup blocking.</h3>
+    <p>This works! If you click on body of the page (basically anything in the page), the event handler is triggered and you are lead to another page!</p>
+  </div>
+  <div>
+    <script>
+      $("body").click(function(e) {
+        e.preventDefault();
+        window.open("http://sub2.mylab.com/popup/hijack.html");
+      });
+    </script>
+  </div>
+</body>
+</html>
